@@ -1,0 +1,42 @@
+/* App.css */
+:root {
+  --primary-pink: #FADADD;
+  --white: #ffffff;
+  --font-script: 'Dancing Script', cursive;
+  /* we’ll import it from Google Fonts */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  /* default for general text */
+  background-color: var(--white);
+  color: #333;
+}
+
+.navbar,
+footer {
+  background-color: var(--primary-pink);
+}
+
+h1,
+h2,
+.brand-name {
+  font-family: var(--font-script);
+  color: #000;
+  /* your text in black for contrast */
+}
+
+/* Custom styles for the new button in ProductCard */
+.btn-pink {
+  background-color: var(--primary-pink);
+  border-color: var(--primary-pink);
+  color: #000;
+  transition: background-color 0.3s;
+}
+
+.btn-pink:hover {
+  background-color: #f7b7c0;
+  /* A slightly darker pink on hover */
+  border-color: #f7b7c0;
+  color: #fdb9b9;
+}

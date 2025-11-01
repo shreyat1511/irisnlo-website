@@ -1,0 +1,54 @@
+/* Banner Styles */
+.iris-lo-banner {
+  background-color: #ffccd5; /* Brighter pink */
+  padding: 60px 20px;
+  border-radius: 15px;
+}
+
+.iris-lo-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 3rem;
+}
+
+.iris-lo-subtitle {
+  font-size: 1.2rem;
+}
+
+/* Pink Add to Cart Buttons */
+.product-card button {
+  background-color: #ffccd5; /* Hot pink */
+  border: none;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.product-card button:hover {
+  background-color: #e0559f; /* Darker pink on hover */
+}
+
+/* Top Banner */
+.top-banner {
+  background-color: #ffccd5; /* Brighter pink */
+  padding: 60px 20px;
+  border-radius: 15px;
+  color: #555; /* A dark gray for better readability on pink */
+}
+
+.banner-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.banner-subtitle {
+  font-size: 1.2rem;
+}
+
+/* Footer Banner */
+.footer-banner {
+  background-color: #ffccd5; /* Same bright pink */
+  padding: 20px;
+  border-radius: 10px;
+  color: #555; /* A dark gray for better readability on pink */
+  font-weight: bold;
+}
