@@ -39,6 +39,16 @@ irisnlo/
 ├── controllers/ # Business logic
 └── package.json # Backend dependencies
 
+---
+
+## 👥 Team Members
+Shreya Thapa — Full Stack Developer
+Aditi Verma — Full Stack Developer
+
+---
+
+## 📜 License
+This project is licensed under the MIT License
 
 ## 🚀 Installation
 
@@ -58,14 +68,4 @@ cd jewellery-backend
 npm install
 npm run dev
 
---
-
-## 👥 Team Members
-Shreya Thapa — Full Stack Developer
-Aditi Verma — Full Stack Developer
-
---
-
-## 📜 License
-This project is licensed under the MIT License
 
