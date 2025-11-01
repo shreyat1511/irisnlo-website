@@ -58,10 +58,12 @@ cd jewellery-backend
 npm install
 npm run dev
 
-👥 Team Members
+## 👥 Team Members
 Shreya Thapa — Full Stack Developer
 Aditi Verma — Full Stack Developer
 
-📜 License
+--
+
+## 📜 License
 This project is licensed under the MIT License
 
