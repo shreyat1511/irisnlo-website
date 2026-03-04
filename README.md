@@ -1,7 +1,7 @@
-#  Iris&Lo — Online Jewellery & Accessories Store
+# Iris & Lo — Online Jewellery & Accessories Store
 
 IrisNlo is a full-stack **MERN** (MongoDB, Express.js, React.js, Node.js) web application designed for a seamless online jewellery and accessories shopping experience.  
-The platform provides an elegant interface for users to browse collections, manage their carts, and place orders — while allowing admins to manage inventory efficiently.
+The platform provides an elegant interface for users to browse collections, manage their carts, and place orders while allowing admins to manage inventory efficiently.
 
 ---
 
@@ -25,31 +25,31 @@ The platform provides an elegant interface for users to browse collections, mana
 ---
 
 ## 🏗️ Project Structure
-
+```
 irisnlo/
+├── jewellery-frontend/     # React frontend
+│   ├── src/                # Components, pages, and UI logic
+│   ├── public/             # Static assets
+│   └── package.json        # Frontend dependencies
 │
-├── jewellery-frontend/ # React frontend
-│ ├── src/ # Components, pages, and UI logic
-│ ├── public/ # Static assets
-│ └── package.json # Frontend dependencies
-│
-└── jewellery-backend/ # Node + Express backend
-├── models/ # MongoDB schemas
-├── routes/ # API endpoints
-├── controllers/ # Business logic
-└── package.json # Backend dependencies
+└── jewellery-backend/      # Node + Express backend
+    ├── models/             # MongoDB schemas
+    ├── routes/             # API endpoints
+    ├── controllers/        # Business logic
+    └── package.json        # Backend dependencies
+```
 
 ---
 
 ## 📜 License
-This project is licensed under the MIT License
+
+This project is licensed under the MIT License.
 
 ---
 
 ## 🚀 Installation
 
 Clone the repository and install dependencies for both frontend and backend.
-
 ```bash
 git clone https://github.com/shreyat1511/irisnlo.git
 cd irisnlo
@@ -63,10 +63,14 @@ npm start
 cd jewellery-backend
 npm install
 npm run dev
----
+```
+
 ---
 
 ## Screenshots
 
 ### Home Page
-![Home Page](screenshots/Screenshot 2025-11-13 121848.png)
+![Home Page](screenshots/home.png)
+
+### Shop
+![Shop](screenshots/shop.png)
