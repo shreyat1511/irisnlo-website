@@ -64,4 +64,9 @@ cd jewellery-backend
 npm install
 npm run dev
 
+---
 
+## Screenshots
+
+### Home Page
+![Home Page](screenshots/Screenshot 2025-11-13 121848.png)
