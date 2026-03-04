@@ -1,42 +1,21 @@
 import express from "express";
-import Order from "../models/orderModel.js";
+import {
+  getOrders,
+  getOrderById,
+  createOrder,
+  updateOrderStatus,
+  deleteOrder,
+  trackOrderByEmail,
+} from "../controllers/orderController.js";
+import { verifyAdmin } from "../middleware/authMiddleware.js";
 
 const router = express.Router();
 
-//  Get all orders
-router.get("/", async (req, res) => {
-  try {
-    const orders = await Order.find();
-    res.json(orders);
-  } catch (err) {
-    res.status(500).json({ message: "Error fetching orders", error: err });
-  }
-});
-
-//  Add new order (you’ll call this from frontend checkout)
-router.post("/", async (req, res) => {
-  try {
-    const newOrder = new Order(req.body);
-    await newOrder.save();
-    res.json(newOrder);
-  } catch (err) {
-    res.status(500).json({ message: "Error creating order", error: err });
-  }
-});
-
-//  Update order status
-router.put("/:id/status", async (req, res) => {
-  try {
-    const { status } = req.body;
-    const updated = await Order.findByIdAndUpdate(
-      req.params.id,
-      { status },
-      { new: true }
-    );
-    res.json(updated);
-  } catch (err) {
-    res.status(500).json({ message: "Error updating status", error: err });
-  }
-});
+router.get("/", verifyAdmin, getOrders);
+router.get("/track", trackOrderByEmail); // Public — customer order tracking
+router.get("/:id", verifyAdmin, getOrderById);
+router.post("/", createOrder); // Public — customers place orders
+router.put("/:id/status", verifyAdmin, updateOrderStatus);
+router.delete("/:id", verifyAdmin, deleteOrder);
 
 export default router;

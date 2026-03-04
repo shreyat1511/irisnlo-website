@@ -1,31 +1,50 @@
-import React, { createContext, useState, useContext } from 'react';
+import React, { createContext, useState, useContext, useEffect } from "react";
 
-// 1. Create the Context object
 const AuthContext = createContext();
 
-// 2. Create the Provider component
 export const AuthProvider = ({ children }) => {
-    // Central state for login status
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [user, setUser] = useState(null);
+  const [isAdmin, setIsAdmin] = useState(false);
 
-    // Function to simulate logging in after sign-up/login
-    const login = () => {
-        setIsLoggedIn(true);
-    };
+  // Persist login state across page refreshes
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+    const adminToken = localStorage.getItem("adminToken");
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+      setIsLoggedIn(true);
+    }
+    if (adminToken) {
+      setIsAdmin(true);
+    }
+  }, []);
 
-    // Function to simulate logging out (for future use)
-    const logout = () => {
-        setIsLoggedIn(false);
-    };
+  const login = (userData) => {
+    setIsLoggedIn(true);
+    setUser(userData);
+    localStorage.setItem("user", JSON.stringify(userData));
+  };
 
-    return (
-        <AuthContext.Provider value={{ isLoggedIn, login, logout }}>
-            {children}
-        </AuthContext.Provider>
-    );
+  const logout = () => {
+    setIsLoggedIn(false);
+    setUser(null);
+    setIsAdmin(false);
+    localStorage.removeItem("user");
+    localStorage.removeItem("adminToken");
+    localStorage.removeItem("cart");
+  };
+
+  const adminLogin = (token) => {
+    setIsAdmin(true);
+    localStorage.setItem("adminToken", token);
+  };
+
+  return (
+    <AuthContext.Provider value={{ isLoggedIn, user, isAdmin, login, logout, adminLogin }}>
+      {children}
+    </AuthContext.Provider>
+  );
 };
 
-// 3. Custom hook to easily use the context
-export const useAuth = () => {
-    return useContext(AuthContext);
-};
+export const useAuth = () => useContext(AuthContext);
